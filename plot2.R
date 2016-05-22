@@ -1,0 +1,6 @@
+data_date <- as.Date(data$Date, format = "%d/%m/%Y")
+data_datetime <- as.POSIXct(paste(data$Date, data$Time))
+png(filename = "plot2.png", width = 480, height = 480, units="px")
+Sys.setlocale(category = "LC_ALL", locale = "english")
+plot(data_datetime, data$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
+dev.off()
